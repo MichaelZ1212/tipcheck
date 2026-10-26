@@ -15,7 +15,7 @@ claims hold up, what the tip left out, and which red flags to watch for. It expl
 You need **Python 3.11+** and internet access (for Yahoo Finance + SEC data and the AI model).
 
 ```bash
-git clone <this repo>
+git clone https://github.com/MichaelZ1212/tipcheck.git
 cd tipcheck
 python -m venv .venv
 # macOS / Linux:
