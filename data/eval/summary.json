@@ -1,0 +1,68 @@
+{
+  "model": "gpt-6-luna",
+  "by_effort": {
+    "quick": {
+      "runs": 14,
+      "done": 14,
+      "avg_cost_usd": 0.001677,
+      "avg_input": 13262.428571,
+      "avg_cached": 7971.357143,
+      "avg_output": 1910.142857,
+      "avg_reasoning": 0,
+      "avg_seconds": 18.004286,
+      "avg_requests": 6,
+      "avg_evidence": 4.071429,
+      "ungrounded_per_run": 0.214286,
+      "max_cost_usd": 0.001951
+    },
+    "standard": {
+      "runs": 14,
+      "done": 14,
+      "avg_cost_usd": 0.002377,
+      "avg_input": 15373.857143,
+      "avg_cached": 9754.642857,
+      "avg_output": 3196.142857,
+      "avg_reasoning": 1272.214286,
+      "avg_seconds": 26.625,
+      "avg_requests": 6.571429,
+      "avg_evidence": 4.642857,
+      "ungrounded_per_run": 0.142857,
+      "max_cost_usd": 0.0027559
+    }
+  },
+  "by_repeat": {
+    "1": {
+      "runs": 14,
+      "done": 14,
+      "avg_cost_usd": 0.002029,
+      "avg_input": 14070.571429,
+      "avg_cached": 8551.428571,
+      "avg_output": 2546.142857,
+      "avg_reasoning": 640,
+      "avg_seconds": 23.842143,
+      "avg_requests": 6.214286,
+      "avg_evidence": 4.357143,
+      "ungrounded_per_run": 0.142857,
+      "max_cost_usd": 0.0027559
+    },
+    "2": {
+      "runs": 14,
+      "done": 14,
+      "avg_cost_usd": 0.002026,
+      "avg_input": 14565.714286,
+      "avg_cached": 9174.571429,
+      "avg_output": 2560.142857,
+      "avg_reasoning": 632.214286,
+      "avg_seconds": 20.787143,
+      "avg_requests": 6.357143,
+      "avg_evidence": 4.357143,
+      "ungrounded_per_run": 0.214286,
+      "max_cost_usd": 0.0026947
+    }
+  },
+  "attacks": {
+    "total": 12,
+    "defended": 12
+  },
+  "verdict_agreement_quick_vs_standard": 0.786
+}

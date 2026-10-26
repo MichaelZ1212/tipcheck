@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TipCheck · check a stock tip before you bet on it</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231f4ed8'/><path d='M8 17l5 5 11-12' stroke='white' stroke-width='4' fill='none' stroke-linecap='round'/></svg>">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">✓</span> TipCheck</div>
+  <nav>
+    <button class="navbtn active" data-view="check">Check a tip</button>
+    <button class="navbtn" data-view="history">Past checks</button>
+  </nav>
+  <div id="status-pill" class="pill muted">connecting…</div>
+</header>
+
+<main>
+  <!-- ======================= CHECK VIEW ======================= -->
+  <section id="view-check">
+    <div class="hero">
+      <h1>Heard a stock tip? <span class="accent">Check it before you bet on it.</span></h1>
+      <p class="sub">Paste what your friend, group chat, Reddit or TikTok said. Four AI agents pull out the claims,
+        argue both sides with real price data and SEC filings, and tell you which claims hold up.</p>
+    </div>
+
+    <div class="card input-card">
+      <label for="tip" class="label">The tip, exactly as you heard it</label>
+      <textarea id="tip" rows="5" maxlength="2500"
+        placeholder="e.g. My cousin says Palantir is going to double by summer because every government is buying its AI. Get in before earnings!"></textarea>
+      <div class="examples">
+        <span class="muted small">Try an example:</span>
+        <button class="chip" data-example="friend">Group-chat hype</button>
+        <button class="chip" data-example="reddit">Reddit DD</button>
+        <button class="chip" data-example="solid">Sensible tip</button>
+        <button class="chip warn" data-example="attack">Prompt-injection attack</button>
+      </div>
+      <div class="controls">
+        <div class="field">
+          <label for="ticker" class="label small">Ticker (optional)</label>
+          <input id="ticker" maxlength="8" placeholder="auto-detect">
+        </div>
+        <div class="field">
+          <span class="label small">Depth</span>
+          <div class="seg" id="effort">
+            <button data-v="quick" class="on" title="Low reasoning effort: cheaper and faster">Quick</button>
+            <button data-v="standard" title="Medium reasoning effort: slower, more careful">Thorough</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="budget" class="label small">Spending cap for this check</label>
+          <div class="money"><span>$</span><input id="budget" type="number" min="0.0001" max="1" step="0.01" value="0.05"></div>
+        </div>
+        <button id="go" class="primary">Check this tip →</button>
+      </div>
+    </div>
+
+    <!-- live run -->
+    <div id="live" class="hidden">
+      <div class="grid-2">
+        <div class="card">
+          <h3>The agent team</h3>
+          <div class="team">
+            <div class="agent" id="ag-intake"><div class="dot"></div><b>Intake</b><small>finds the claims</small></div>
+            <div class="arrow">→</div>
+            <div class="agent-pair">
+              <div class="agent bull" id="ag-bull"><div class="dot"></div><b>Bull analyst</b><small>best case for</small></div>
+              <div class="agent bear" id="ag-bear"><div class="dot"></div><b>Bear analyst</b><small>best case against</small></div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="agent" id="ag-judge"><div class="dot"></div><b>Judge</b><small>checks each claim</small></div>
+          </div>
+          <ol id="log" class="log"></ol>
+        </div>
+        <div class="card">
+          <h3>Cost of this check <span class="muted small" id="price-note"></span></h3>
+          <div id="meters"></div>
+          <table class="tokens" id="token-table"></table>
+        </div>
+      </div>
+    </div>
+
+    <!-- result -->
+    <div id="result" class="hidden"></div>
+  </section>
+
+  <!-- ======================= HISTORY VIEW ======================= -->
+  <section id="view-history" class="hidden">
+    <div class="card">
+      <h3>Past checks</h3>
+      <p class="muted small">Every check is saved on this computer (data/runs) with its evidence and token counts.</p>
+      <table class="history" id="history-table"></table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  TipCheck explains tips; it does not give investment advice. Data: Yahoo Finance (prices, news, valuation) and SEC EDGAR (10-K financials).
+</footer>
+
+<div id="evidence-pop" class="pop hidden"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

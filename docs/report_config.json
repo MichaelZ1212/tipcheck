@@ -1,0 +1,18 @@
+{
+  "author": "Michael Zheng",
+  "course": "MGT 409 · AI Foundations for Managers · Fall 2026",
+  "repo_url": "https://github.com/MichaelZ1212/tipcheck",
+  "app_url": "",
+  "checks_per_user_per_month": 8,
+  "manual_check_minutes": 15,
+  "manual_check_minutes_source": "the author's own timed attempt on Oct 25, 2026, checking the SoundHound example tip by hand with Google and Yahoo Finance, no AI",
+  "user_test": {
+    "who": "Vivian, a family member",
+    "date": "Oct 25, 2026",
+    "tip_they_tried": "\"NVIDIA's revenue is growing rapidly because of AI demand, and its stock could double again in the next 12 months. It's still a great time to buy before the next big rally.\"",
+    "minutes_by_hand": 15,
+    "minutes_with_tipcheck": 2,
+    "quote": "I usually wouldn't spend 15 minutes checking a stock tip. TipCheck makes it much easier to see what's actually true and what's just hype. I would definitely think twice before buying the stock.",
+    "what_they_changed_their_mind_about": "After reading the report, Vivian said they would think twice before buying the stock. (By hand = the author's own timed 15-minute manual check; with TipCheck = Vivian's time from pasting the tip to finishing the report.)"
+  }
+}
